@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <>
       {" "}
-      <div className="bg-[#faf9f9] ">
+      <div className="bg-[#faf9f9]">
         <div className="page-width">
           <div className="md:flex justify-around">
             <div className="flex justify-center">
