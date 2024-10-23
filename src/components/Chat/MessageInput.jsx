@@ -12,7 +12,7 @@ const MessageInput = ({ onSendMessage }) => {
   };
 
   return (
-    <form onSubmit={handleSend} className="p-4 border-t">
+    <form onSubmit={handleSend} className="p-4">
       <div className="flex">
         <input
           type="text"

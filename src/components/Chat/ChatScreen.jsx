@@ -20,9 +20,8 @@ const ChatScreen = () => {
   };
 
   return (
-    <div className="h-[85vh] justify-between flex flex-col">
+    <div className="">
       <ChatWindow messages={messages} />
-      <MessageInput onSendMessage={handleSendMessage} />
     </div>
   );
 };
