@@ -23,18 +23,38 @@ const TrainMe = () => {
   ];
 
   // Filter the table data based on the search term
-  const filteredData = tableData.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.status.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.lastUpdated.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.action.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredData = tableData.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.status.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.lastUpdated.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.action.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <>
       <div className="page-width">
         <h2 className="text-[2rem] my-3 text-center font-semibold">Train Me</h2>
+        {/* card */}
+        <div className="shadow-lg rounded-lg mt-5 p-5 bg-white w-1/3">
+          <p className="mb-2 font-semibold">
+            Current version:{" "}
+            <span className="font-normal">version-2.0-2024-09-09.md</span>
+          </p>
+          <p className="mb-2 font-semibold">
+           Name:{" "}
+            <span className="font-normal">version-2.0-2024-09-09.md</span>
+          </p>
+          <p className="mb-2 font-semibold">
+           Created by:{" "}
+            <span className="font-normal">Sathish</span>
+          </p>
+          <p className="mb-2 font-semibold">
+           Last updated:{" "}
+            <span className="font-normal">Adam</span>
+          </p>
+        </div>
         <div className="flex justify-end">
           <div className="relative ml-12 mr-5 md:mr-0 md:ml-0 col-span-2">
             <span className="absolute text-[#6f6f6f] top-[13px] left-4">
@@ -113,12 +133,16 @@ const TrainMe = () => {
                             </td>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               <div className="flex items-center">
-                                <p className="tertiary-para2">{item.createdBy}</p>
+                                <p className="tertiary-para2">
+                                  {item.createdBy}
+                                </p>
                               </div>
                             </td>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               <div className="flex items-center">
-                                <p className="tertiary-para2">{item.lastUpdated}</p>
+                                <p className="tertiary-para2">
+                                  {item.lastUpdated}
+                                </p>
                               </div>
                             </td>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
