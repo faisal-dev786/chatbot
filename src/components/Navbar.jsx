@@ -9,10 +9,10 @@ import {
   MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", to: "/dashboard", current: true },
+  { name: "Dashboard", to: "/dashboard", current: false },
   { name: "Train Me", to: "/train-me", current: false },
 ];
 
@@ -21,6 +21,13 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const updatedNavigation = navigation.map((item) => ({
+    ...item,
+    current: location.pathname === item.to,
+  }));
+
   return (
     <>
       <Disclosure as="nav" className="bg-gray-800">
@@ -51,7 +58,7 @@ const Navbar = () => {
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
-                  {navigation.map((item) => (
+                  {updatedNavigation.map((item) => (
                     <Link
                       key={item.name}
                       to={item.to}
@@ -116,7 +123,7 @@ const Navbar = () => {
 
         <DisclosurePanel className="sm:hidden">
           <div className="space-y-1 px-2 pb-3 pt-2">
-            {navigation.map((item) => (
+            {updatedNavigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.to}
