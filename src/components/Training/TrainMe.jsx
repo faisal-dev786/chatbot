@@ -37,7 +37,7 @@ const TrainMe = () => {
       <div className="page-width">
         <h2 className="text-[2rem] my-3 text-center font-semibold">Train Me</h2>
         {/* card */}
-        <div className="shadow-lg rounded-lg mt-5 p-5 bg-white w-1/3">
+        <div className="shadow-lg rounded-lg mt-5 mb-5 md:mb-0 p-5 bg-white md:w-1/3">
           <p className="mb-2 font-semibold">
             Current version:{" "}
             <span className="font-normal">version-2.0-2024-09-09.md</span>
@@ -55,7 +55,7 @@ const TrainMe = () => {
             <span className="font-normal">Adam</span>
           </p>
         </div>
-        <div className="flex justify-end">
+        <div className="flex md:justify-end">
           <div className="relative ml-12 mr-5 md:mr-0 md:ml-0 col-span-2">
             <span className="absolute text-[#6f6f6f] top-[13px] left-4">
               <IoSearch />

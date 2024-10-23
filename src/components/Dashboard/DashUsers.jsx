@@ -18,8 +18,15 @@ const DashUsers = () => {
   return (
     <>
       {" "}
+
       {/* table */}
       <div className="w-full mb-12 mt-20">
+      <select className="border rounded-md outline-none py-2 pl-2 mb-5 w-64 bg-[#f6f7f9]" name="" id="">
+        <option value="">Select all</option>
+        <option value="">Activate</option>
+        <option value="">Suspend</option>
+        <option value="">Archive</option>
+      </select>
         <div className="">
           <div className="flex flex-col">
             <div className="-my-2 py-2">

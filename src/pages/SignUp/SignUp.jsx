@@ -25,16 +25,19 @@ const SignUp = () => {
                 </p>
                 <p className="secondary-para mb-1">Email*</p>
                 <input
-                  className="border rounded-md outline-none w-full py-2 pl-2"
+                  className="border rounded-md outline-none w-full py-1 pl-2 bg-[#f6f7f9]"
                   type="text"
+                  placeholder="abc@gmail.com"
                 />
+
                 <p className="secondary-para mt-2 mb-1">Password*</p>
                 <div className="relative">
                   <input
-                   className="border rounded-md outline-none w-full py-2 pl-2"
-                    placeholder=""
+                    className="border rounded-md outline-none w-full py-2 pl-2 bg-[#f6f7f9]"
+                    placeholder="password"
                     type={showPassword ? "text" : "password"}
                     autoComplete="current-password"
+              
                   />
 
                   <span onClick={togglePassword}>
@@ -54,8 +57,8 @@ const SignUp = () => {
                 <p className="secondary-para mt-2 mb-1">Confirm password*</p>
                 <div className="relative">
                   <input
-                   className="border rounded-md outline-none w-full py-2 pl-2"
-                    placeholder=""
+                     className="border rounded-md outline-none w-full py-2 pl-2 bg-[#f6f7f9]"
+                    placeholder="password"
                     type={showPassword ? "text" : "password"}
                     autoComplete="current-password"
                   />
