@@ -10,19 +10,18 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Training from "../pages/Training/Training";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import Chat from "../pages/Chat/Chat";
+import LandingPage from "../pages/LandingPage/LandingPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/dashboard" element={ <Dashboard/>} />
-      <Route path="/train-me" element={    <Training/>} />
-      <Route path="/user-profile" element={     <UserProfile/>} />
-      <Route path="/chat" element={    <Chat/>} />
-     
-    
-
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/train-me" element={<Training />} />
+      <Route path="/user-profile" element={<UserProfile />} />
+      <Route path="/chat" element={<Chat />} />
+      <Route path="/about" element={<LandingPage />} />
     </>
   )
 );
