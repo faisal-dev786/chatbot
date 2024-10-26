@@ -28,7 +28,7 @@ const ChatLayout = ({ children }) => {
         toggleCollapse={toggleCollapse}
       />
       <div
-        className={`flex flex-col w-full transition-margin duration-200 ease-in-out ${
+        className={`flex flex-col w-full transition-margin ease-in-out ${
           isCollapsed ? "md:ml-16" : "md:ml-64"
         }`}
       >
