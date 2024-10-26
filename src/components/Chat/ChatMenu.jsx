@@ -1,28 +1,20 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ChatNav from "./ChatNav"; // Adjust the path as needed
-
-// Importing icons
 import { CiChat1 } from "react-icons/ci";
-import { IoIosNotificationsOutline } from "react-icons/io";
-import { LuDatabaseBackup } from "react-icons/lu";
 import { FaUsersGear } from "react-icons/fa6";
 import { TbLogout } from "react-icons/tb";
+import { MdEditSquare } from "react-icons/md";
 
-const ChatMenu = ({
-  isOpen,
-  isCollapsed,
-  closeChatMenu,
-  toggleCollapse,
-}) => {
+const ChatMenu = ({ isOpen, isCollapsed, closeChatMenu, toggleCollapse }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const ChatMenuRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (ChatMenuRef.current && !ChatMenuRef.current.contains(event.target)) {
-        closeChatMenu(); // Close the ChatMenu when clicking outside
+        closeChatMenu();
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -38,9 +30,7 @@ const ChatMenu = ({
     >
       <div className="p-4 flex items-center justify-between">
         <h1
-          className={`text-[1.5rem] font-bold ml-3 ${
-            isCollapsed ? "hidden" : ""
-          }`}
+          className={`text-[1.5rem] font-bold ml-3 ${isCollapsed ? "hidden" : ""}`}
         >
           Chatbot
         </h1>
@@ -71,11 +61,32 @@ const ChatMenu = ({
         </button>
       </div>
       <div className="p-4">
-        <div className="flex flex-col h-[70vh] md:h-[80vh] justify-between">
+        <div className="flex justify-end mb-2 relative">
+          <span
+            className="text-[1.5rem] cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <MdEditSquare />
+          </span>
+
+          {isHovered && (
+            <div
+              className={`${
+                isCollapsed ? "left-6" : "right-0"
+              } absolute mt-8 w-28 bg-white shadow-lg rounded-md p-1 z-10`}
+            >
+              <p className="text-md font-semibold text-gray-700 hover:bg-gray-100 rounded-md px-2 py-1 cursor-pointer">
+                New Chat
+              </p>
+            </div>
+          )}
+        </div>
+        <div className="flex flex-col mt-8 h-[70vh] md:h-[80vh] justify-between">
           <ChatNav
             to="/new-chat"
             icon={<CiChat1 />}
-            text="New chat"
+            text="Chat1"
             isCollapsed={isCollapsed}
             onChatNavClick={isOpen ? closeChatMenu : null}
           />
