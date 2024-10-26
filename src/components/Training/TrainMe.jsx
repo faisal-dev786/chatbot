@@ -37,22 +37,19 @@ const TrainMe = () => {
       <div className="page-width">
         <h2 className="text-[2rem] my-3 text-center font-semibold">Train Me</h2>
         {/* card */}
-        <div className="shadow-lg rounded-lg mt-5 mb-5 md:mb-0 p-5 bg-white md:w-1/3">
+        <div className="shadow-lg rounded-lg mt-5 mb-12 md:mb-20 p-5 bg-white md:w-1/3">
           <p className="mb-2 font-semibold">
             Current version:{" "}
             <span className="font-normal">version-2.0-2024-09-09.md</span>
           </p>
           <p className="mb-2 font-semibold">
-           Name:{" "}
-            <span className="font-normal">version-2.0-2024-09-09.md</span>
+            Name: <span className="font-normal">version-2.0-2024-09-09.md</span>
           </p>
           <p className="mb-2 font-semibold">
-           Created by:{" "}
-            <span className="font-normal">Sathish</span>
+            Created by: <span className="font-normal">Sathish</span>
           </p>
           <p className="mb-2 font-semibold">
-           Last updated:{" "}
-            <span className="font-normal">Adam</span>
+            Last updated: <span className="font-normal">Adam</span>
           </p>
         </div>
         <div className="flex md:justify-end">
@@ -80,6 +77,7 @@ const TrainMe = () => {
                     {/* HEAD start */}
                     <thead>
                       <tr className="bg-[#F1F4F9] border-b border-gray-200 text-xs leading-4 text-gray-500 tracking-wider">
+                        <th className="px-6 py-3 text-left font-medium"></th>
                         <th className="px-6 py-3 text-left font-medium">
                           Sr. No.
                         </th>
@@ -116,11 +114,18 @@ const TrainMe = () => {
                       {filteredData.length > 0 ? (
                         filteredData.map((item, index) => (
                           <tr key={index}>
+                            <td className="px-10 py-4 whitespace-no-wrap border-b border-gray-200">
+                              <input
+                                className="form-checkbox  h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                                type="checkbox"
+                              />
+                            </td>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               <div className="flex items-center">
                                 <p className="tertiary-para">{index + 1}</p>
                               </div>
                             </td>
+
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               <div className="flex items-center">
                                 <p className="tertiary-para">{item.name}</p>
@@ -170,7 +175,11 @@ const TrainMe = () => {
             </div>
           </div>
         </div>
-
+        <div className="flex justify-end mb-12 md:mb-20">
+          <button className="text-[#212B59] px-5 mt-5 py-2 border rounded-md border-[#926E32] text-[1rem] font-bold">
+            Apply
+          </button>
+        </div>
         {/* Additional form elements */}
         <p className="mb-2 font-semibold">Enter Text</p>
         <textarea
@@ -178,7 +187,7 @@ const TrainMe = () => {
           placeholder="Type here.........."
           rows={5}
         ></textarea>
-        <div className="flex justify-end">
+        <div className="flex justify-end mb-12 md:mb-20">
           <button className="text-[#212B59] px-5 mt-5 py-2 border rounded-md border-[#926E32] text-[1rem] font-bold">
             Submit
           </button>
@@ -188,7 +197,7 @@ const TrainMe = () => {
         <div className="border p-5 shadow-lg rounded-lg">
           <input type="file" />
         </div>
-        <div className="flex justify-end mb-12">
+        <div className="flex justify-end mb-12 md:mb-20">
           <button className="text-[#212B59] px-5 mt-5 py-2 border rounded-md border-[#926E32] text-[1rem] font-bold">
             Submit
           </button>

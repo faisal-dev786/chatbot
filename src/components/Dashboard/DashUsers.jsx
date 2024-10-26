@@ -18,15 +18,18 @@ const DashUsers = () => {
   return (
     <>
       {" "}
-
       {/* table */}
       <div className="w-full mb-12 mt-20">
-      <select className="border rounded-md outline-none py-2 pl-2 mb-5 w-64 bg-[#f6f7f9]" name="" id="">
-        <option value="">Select all</option>
-        <option value="">Activate</option>
-        <option value="">Suspend</option>
-        <option value="">Archive</option>
-      </select>
+        <select
+          className="border rounded-md outline-none py-2 pl-2 mb-5 w-64 bg-[#f6f7f9]"
+          name=""
+          id=""
+        >
+          <option value="">Select all</option>
+          <option value="">Activate</option>
+          <option value="">Suspend</option>
+          <option value="">Archive</option>
+        </select>
         <div className="">
           <div className="flex flex-col">
             <div className="-my-2 py-2">
@@ -35,6 +38,7 @@ const DashUsers = () => {
                   {/* HEAD start */}
                   <thead>
                     <tr className="bg-[#F1F4F9] border-b border-gray-200 text-xs leading-4 text-gray-500  tracking-wider">
+                      <th className="px-6 py-3 text-left font-medium"></th>
                       <th className="px-6 py-3 text-left font-medium">
                         Sr. No.
                       </th>
@@ -72,6 +76,12 @@ const DashUsers = () => {
                     {tableData?.map((item, index) => {
                       return (
                         <tr key={index}>
+                          <td className="px-10 py-4 whitespace-no-wrap border-b border-gray-200">
+                            <input
+                              className="form-checkbox  h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                              type="checkbox"
+                            />
+                          </td>
                           <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                             <div className="flex items-center">
                               <p className="tertiary-para">{index + 1}</p>
